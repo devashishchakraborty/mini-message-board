@@ -1,0 +1,140 @@
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+header, main, footer{
+  padding: 16px 64px;
+}
+
+header{
+  background-color: darkslategray;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  nav{
+    display: flex;
+    gap: 16px;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.6em;
+  }
+
+  a+a {
+    border-left: 1px solid white;
+    padding-left: 16px;
+  }
+}
+
+header .name{
+  font-size: 2.4em;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepageContainer{
+  font-size: 1.2em;
+}
+
+.messagesGrid{
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  gap: 16px;
+}
+
+.messagesGrid .message{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid lightgray;
+  border-radius: 16px;
+  padding: 24px;
+  text-decoration: none;
+  color: darkslategray;
+}
+
+.messagesGrid .message:hover{
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.newMessageContainer{
+  padding: 15px 45px;
+  border-radius: 16px;
+  color: darkslategray;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid lightgray;
+}
+
+.newMessageContainer form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+
+  div{
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+  }
+}
+
+textarea{
+  resize: none;
+}
+
+.submitBtn{
+  align-self: center;
+  background-color: darkslategray;
+  color: white;
+  padding: 5px 30px;
+  border-radius: 8px;
+  font-size: 1.3em;
+  border: none;
+  cursor: pointer;
+}
+
+.submitBtn:hover{
+  filter: brightness(90%);
+}
+
+
+.messageContainer{
+  font-size: 2em;
+}
+
+footer{
+  background-color: darkslategray;
+  padding: 8px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  a{
+    color: white;
+  }
+
+  a img{
+    height: 20px;
+    width: 20px;
+  }
+}
+
+

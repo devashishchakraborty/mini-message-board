@@ -1,0 +1,21 @@
+<!-- message.ejs -->
+<html>
+  <head>
+    <title>Message</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <%- include("header") %>
+    <main>
+      <div class="messageContainer">
+        <h1>Message</h1>
+        <div class="text"><b>Message:</b> <%= message.text %></div>
+        <div class="user"><b>By:</b> <%= message.user %></div>
+        <div class="dateAdded">
+          <b>Added at:</b> <%= message.added.toString().slice(3, -30) %>
+        </div>
+      </div>
+    </main>
+    <%- include("footer") %>
+  </body>
+</html>

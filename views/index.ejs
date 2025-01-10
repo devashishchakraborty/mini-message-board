@@ -2,17 +2,26 @@
 <html>
   <head>
     <title>Homepage</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1><%= title %> </h1>
-    <ul>
-      <% messages.forEach(message => { %>
-       <li>
-        <div class="text">Message: <%= message.text %> </div>
-        <div class="user">By: <%= message.user %> </div>
-        <div class="dateAdded">Added at: <%= message.added %> </div>
-       </li>
-      <% }) %>
-    </ul>
+    <%- include("header") %>
+    <main>
+      <div class="homepageContainer">
+        <h1>Messages</h1>
+        <div class="messagesGrid">
+          <% messages.forEach((message, index) => { %>
+          <a class="message" href="/<%= index+1 %>">
+            <div class="text"><b>Message:</b> <%= message.text %></div>
+            <div class="user"><b>By:</b> <%= message.user %></div>
+            <div class="dateAdded">
+              <b>Added at:</b> <%= message.added.toString().slice(3, -30) %>
+            </div>
+          </a>
+          <% }) %>
+        </div>
+      </div>
+    </main>
+    <%- include("footer") %>
   </body>
 </html>

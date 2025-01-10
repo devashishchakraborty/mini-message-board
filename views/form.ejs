@@ -1,0 +1,40 @@
+<!-- form.ejs -->
+<html>
+  <head>
+    <title>New Message</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <%- include("header") %>
+    <main>
+      <div class="newMessageContainer">
+        <h2>Create a New Message!</h2>
+        <form method="POST" action="/new">
+          <div>
+            <label for="authorName">Author's Name: </label>
+            <input
+              type="text"
+              name="authorName"
+              id="authorName"
+              size="24"
+              required
+            />
+          </div>
+          <div>
+            <label for="messageText">Message: </label>
+            <textarea
+              id="messageText"
+              name="messageText"
+              rows="4"
+              cols="26"
+              placeholder="Write your Message Here!"
+              required
+            ></textarea>
+          </div>
+          <button class="submitBtn" type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+    <%- include("footer") %>
+  </body>
+</html>
