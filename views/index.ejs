@@ -1,0 +1,18 @@
+<!-- index.ejs -->
+<html>
+  <head>
+    <title>Homepage</title>
+  </head>
+  <body>
+    <h1><%= title %> </h1>
+    <ul>
+      <% messages.forEach(message => { %>
+       <li>
+        <div class="text">Message: <%= message.text %> </div>
+        <div class="user">By: <%= message.user %> </div>
+        <div class="dateAdded">Added at: <%= message.added %> </div>
+       </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
