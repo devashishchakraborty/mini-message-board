@@ -17,3 +17,22 @@ A simple message board application built as part of [The Odin Project](https://w
 - **Backend**: Node.js, Express
 - **Frontend**: HTML, CSS, EJS (Embedded JavaScript templates)
 - **Development Tools**: NPM, Git
+
+## Installation
+
+Follow these steps to run the project locally:
+
+1. **Clone the repository**:
+
+    ```
+    git clone https://github.com/your-username/mini-message-board.git
+    
+    cd mini-message-board
+    ```
+2. **Install dependencies**:
+    `npm install`
+
+3. **Start the server**:
+    `npm start`
+
+4. **Open the application**: Visit http://localhost:3000 in your browser to view the message board.
