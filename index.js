@@ -2,7 +2,7 @@ import express from "express";
 import indexRouter from "./routes/indexRouter.js";
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.set("views", "./views");
 app.set("view engine", "ejs");
