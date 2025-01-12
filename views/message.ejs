@@ -14,7 +14,7 @@
         <div class="text"><b>Message:</b> <%= message.text %></div>
         <div class="user"><b>By:</b> <%= message.user %></div>
         <div class="dateAdded">
-          <b>Added at:</b> <%= message.added.toString().slice(3, -30) %>
+          <b>Added at:</b> <%= `${message.added.getDate()}/${message.added.getMonth()+1}/${message.added.getFullYear()}` %>
         </div>
       </div>
     </main>
