@@ -1,14 +1,17 @@
 import pool from "./pool.js";
 
 const getAllMessages = async () => {
-  const { rows } = await pool.query("SELECT *, TO_CHAR(added, 'Month DDth YYYY') AS added FROM messages");
+  const { rows } = await pool.query(
+    "SELECT *, TO_CHAR(added, 'Month DDth YYYY') AS added FROM messages"
+  );
   return rows;
 };
 
 const getMessage = async (id) => {
-  const { rows } = await pool.query("SELECT *, TO_CHAR(added, 'Month DDth YYYY') AS added FROM messages WHERE id = $1", [
-    id,
-  ]);
+  const { rows } = await pool.query(
+    "SELECT *, TO_CHAR(added, 'Month DDth YYYY') AS added FROM messages WHERE id = $1",
+    [id]
+  );
   return rows[0];
 };
 

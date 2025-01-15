@@ -4,6 +4,8 @@ import {
   insertMessage,
   deleteAllMessages,
 } from "../db/queries.js";
+import asyncHandler from "express-async-handler";
+import CustomNotFoundError from "../errors/CustomNotFoundError.js";
 
 const getMessages = async (req, res) => {
   const messages = await getAllMessages();
@@ -18,11 +20,16 @@ const createMessagePost = async (req, res) => {
   res.redirect("/");
 };
 
-const getMessageById = async (req, res) => {
+const getMessageById = asyncHandler(async (req, res) => {
   const { messageId } = req.params;
   const message = await getMessage(messageId);
+
+  if (!message) {
+    throw new CustomNotFoundError("Message not found");
+  }
+
   res.render("message", { message: message });
-};
+});
 
 const deleteMessages = async (req, res) => {
   await deleteAllMessages();

@@ -4,7 +4,6 @@ import "dotenv/config";
 
 const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
 
-
 export default new Pool({
   host: PGHOST,
   user: PGUSER,
