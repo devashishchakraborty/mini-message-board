@@ -51,7 +51,7 @@ main{
   flex-direction: column;
   flex: 1;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .homepageContainer{
@@ -60,7 +60,7 @@ main{
 
 .messagesGrid{
   display: grid;
-  grid-template-columns: repeat(2, 400px);
+  grid-template-columns: repeat(3, 400px);
   gap: 16px;
 }
 

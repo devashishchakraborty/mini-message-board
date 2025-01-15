@@ -3,8 +3,7 @@
   <head>
     <title>Homepage</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/x-icon" href="messageIcon.svg">
-
+    <link rel="icon" type="image/x-icon" href="messageIcon.svg" />
   </head>
   <body>
     <%- include("header") %>
@@ -12,13 +11,11 @@
       <div class="homepageContainer">
         <h1>Messages</h1>
         <div class="messagesGrid">
-          <% messages.forEach((message, index) => { %>
-          <a class="message" href="/<%= index+1 %>">
+          <% if (locals.messages) messages.forEach((message) => { %>
+          <a class="message" href="/<%= message.id %>">
             <div class="text"><b>Message:</b> <%= message.text %></div>
-            <div class="user"><b>By:</b> <%= message.user %></div>
-            <div class="dateAdded">
-              <b>Added at:</b> <%= `${message.added.getDate()}/${message.added.getMonth()+1}/${message.added.getFullYear()}` %>
-            </div>
+            <div class="author"><b>By:</b> <%= message.author %></div>
+            <div class="dateAdded"><b>Added at:</b> <%= message.added %></div>
           </a>
           <% }) %>
         </div>
